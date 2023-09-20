@@ -1,13 +1,12 @@
 def check_cell_value():
     cell = input('enter a cell value:')
     if len(cell) <= 2 or cell.isalpha() or cell.isnumeric():
-        print('False')
-        exit()
+        return False
     i = [x.isdigit() for x in cell].index(True)
     str1 = cell[:i]
     str2 = cell[i:]
-    print(str1.isalpha() and str2.isnumeric())
+    return str1.isalpha() and str2.isnumeric()
 
 
 if __name__ == '__main__':
-    check_cell_value()
+    print(check_cell_value())
